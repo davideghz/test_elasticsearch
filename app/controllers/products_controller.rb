@@ -4,7 +4,10 @@ class ProductsController < ApplicationController
   def search
     q = params[:q]
     @products = ProductsIndex.filter { tags(:and) == [q] }.load
-    render json: @products
+    respond_to do |format|
+      format.js
+    end
+
   end
 
   # GET /products

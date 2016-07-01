@@ -1,11 +1,13 @@
+<div class="list-group list-group-horizontal">
+  <%= render @tags %>
+</div>
 
-<%= render @tags %>
 
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Products</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,17 +17,8 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.lat %></td>
-        <td><%= product.lon %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <tbody id="table-element">
+    <%= render @products %>
   </tbody>
 </table>
 
