@@ -1,7 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Product.delete_all
+Tag.delete_all
+ProductTag.delete_all
+
+tags = ["pizza","pazza","puzza","pozza","zozza","zozzona","pistola","puzzona"]
+
+tags.each do |tag|
+  Tag.create!(name:tag)
+end
+
+10.times do
+  name = Faker::Lorem.word.humanize
+  lat = Faker::Address.latitude
+  lon = Faker::Address.longitude
+
+  Product.create!(
+             name: name,
+             lat: lat,
+             lon: lon
+  )
+
+end
+
+tags = Tag.all
+
+Product.all.each do |p|
+  p.tags << tags.sample(3)
+end
+
