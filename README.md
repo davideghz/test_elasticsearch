@@ -8,8 +8,8 @@ Dummy Rails APP to show and filter a list of products based on TAGS and GEO coor
 Check http://www.elasticsearch.org/download/ for latest version of ElasticSearch and replace wget link below
 
 ```
-$ wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb  
-$ sudo dpkg -i elasticsearch-1.4.2.deb  
+$ wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb
+$ sudo dpkg -i elasticsearch-1.4.2.deb
 ```
 
 ### DO NOT start elasticsearch by default on bootup
@@ -27,7 +27,7 @@ $ sudo service elasticsearch start
 ## Verify Elasticsearch server is running in localhost
 
 ```
-$ curl localhost:9200  
+$ curl http://localhost:9200
 ```
 
 Should return some JSON Object including the version number
