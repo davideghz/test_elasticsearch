@@ -31,3 +31,6 @@ $ curl http://localhost:9200
 ```
 
 Should return some JSON Object including the version number
+
+## Install gem 'chewy' or add it to Gemfile
+For Chewy gem documentation check https://github.com/toptal/chewy
