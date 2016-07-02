@@ -1,7 +1,8 @@
+<img src="https://static-www.elastic.co/assets/bltfdc1abb6ea9e2157/icon-elasticsearch.svg" width="200" height="200" />
 # Elasticsearch playground
-Dummy APP to show and filter a list of products based on TAGS and GEO coordinates
-ruby 2.2.4
-rails 4.2.6  
+Dummy Rails APP to show and filter a list of products based on TAGS and GEO coordinates  
+- Ruby 2.2.4
+- Rails 4.2.6  
 
 ## Install elasticsearch
 Check http://www.elasticsearch.org/download/ for latest version of ElasticSearch and replace wget link below
