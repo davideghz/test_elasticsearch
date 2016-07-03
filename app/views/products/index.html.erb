@@ -2,6 +2,12 @@
   <%= render @tags %>
 </div>
 
+<%= form_tag search_products_path, remote: true do %>
+    <%= text_field_tag :lat, "", class: 'form-control', placeholder: 'lat' %>
+    <%= text_field_tag :lon, "", class: 'form-control', placeholder: 'lon' %>
+    <%= submit_tag 'Filter', name: nil, class: 'btn btn-default' %>
+<% end %>
+
 
 <p id="notice"><%= notice %></p>
 

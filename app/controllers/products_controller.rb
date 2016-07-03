@@ -2,12 +2,16 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def search
-    q = params[:q]
-    @products = ProductsIndex.filter { tags(:and) == [q] }.load
+    if params[:tag]
+      q = params[:tag]
+      @products = ProductsIndex.filter{ tags(:or) == q }.load
+    end
+    if params[:lat]
+      @products = ProductsSearch.new(products_search_params).search
+    end
     respond_to do |format|
       format.js
     end
-
   end
 
   # GET /products
@@ -80,5 +84,9 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :lat, :lon)
+    end
+
+    def products_search_params
+      params.permit(:utf8, :name, :lat, :lon, :tag)
     end
 end

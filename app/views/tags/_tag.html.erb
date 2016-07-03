@@ -1,1 +1,1 @@
-<%= link_to tag.name, search_products_path(q: tag.name), class: 'list-group-item', remote: true, method: :post %>
+<%= link_to tag.name, search_products_path(tag: tag.name), class: 'list-group-item', remote: true, method: :post %>
