@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require nprogress
+//= require nprogress-turbolinks
+//= require nprogress-ajax
+
+NProgress.configure({
+    showSpinner: true,
+    ease: 'ease',
+    speed: 500
+});

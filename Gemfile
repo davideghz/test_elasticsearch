@@ -11,6 +11,8 @@ gem 'chewy'
 
 gem 'faker'
 
+gem 'nprogress-rails'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
