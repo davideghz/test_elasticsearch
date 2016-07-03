@@ -4,6 +4,15 @@ Dummy Rails APP to show and filter a list of products based on TAGS and GEO coor
 - Ruby 2.2.4
 - Rails 4.2.6  
 
+## Elasticsearch basics
+Elasticsearch has several document-related concepts.
+- An index (the analogue of a database in RDBMS), which consists of a set of documents, which can be of several types (where a type is a kind of RDBMS table).
+- Every document has a set of fields. Each field is analyzed independently and its analysis options are stored in the mapping for its type.
+
+## Gem 'chewy'
+Chewy is an ODM and wrapper for the official Elasticsearch client  
+For Chewy gem documentation check https://github.com/toptal/chewy
+
 ## Install elasticsearch
 Check http://www.elasticsearch.org/download/ for latest version of ElasticSearch and replace wget link below
 
@@ -31,6 +40,3 @@ $ curl http://localhost:9200
 ```
 
 Should return some JSON Object including the version number
-
-## Install gem 'chewy' or add it to Gemfile
-For Chewy gem documentation check https://github.com/toptal/chewy
