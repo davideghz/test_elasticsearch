@@ -2,13 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def search
-    if params[:tag]
-      q = params[:tag]
-      @products = ProductsIndex.filter{ tags(:or) == q }.load
-    end
-    if params[:lat]
-      @products = ProductsSearch.new(products_search_params).search
-    end
+    @products = ProductsSearch.new(products_search_params).search
     respond_to do |format|
       format.js
     end

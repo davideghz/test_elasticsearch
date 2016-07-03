@@ -18,7 +18,11 @@ class ProductsSearch
   def make_query
 
     index = INDEX
-    # index = index.filter{ tags(:or) == @options[:tag] } if tags?
+    if tags?
+      tag = @options[:tag]
+      index = index.filter{ tags(:or) == tag }
+    end
+
     index = index.filter(coords_criteria) if location?
 
     index
